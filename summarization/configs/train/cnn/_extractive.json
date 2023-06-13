@@ -1,0 +1,64 @@
+{
+    "_SumArguments": "SumArguments",
+    "metric_loading_script": "metrics/metric_ext.py",
+    "preprocess_num_proc": 16,
+
+
+    "_SumDataArguments": "SumDataArguments",
+    "dataset_loading_script": ["ccdv/cnn_dailymail", "3.0.0"],
+
+    "src_field": "article",
+    "tgt_field": "highlights",
+
+    "max_src_sample_len": 512,
+
+    "truncation": true,
+    "filter_truncated_train": false,
+    "filter_truncated_valid": false,
+    "filter_truncated_test": false,
+
+
+    "_ExtSumModelArguments": "ExtSumModelArguments",
+    "pretrained_model_name_or_path": "bert-base-uncased",
+
+
+    "_ExtSumTrainingArguments": "ExtSumTrainingArguments",
+    "learning_rate": 1e-3,
+    
+    "warmup_steps": 3000,
+    "_num_train_epochs": 1,
+    "max_steps": 20000,
+    
+    "per_device_train_batch_size": 18,
+    "per_device_eval_batch_size": 2,
+    "group_by_length": true,
+    "token_batching": false,
+    "fp16": true,
+    "gradient_accumulation_steps": 2,
+    "_gradient_checkpointing": true,
+    "_use_cache": false,
+
+    "eval_accumulation_steps": 1,
+    "evaluation_strategy": "steps",
+    "train_metric_samples": 500,
+    "eval_steps": 1000,
+    "save_steps": 1000,
+    "logging_steps": 500,
+    "report_to": ["wandb"],
+    
+    "do_train": true,
+    "do_eval": true,
+    "do_predict": true,
+
+    "load_best_model_at_end": true,
+    "metric_for_best_model": "loss",
+    "greater_is_better": false,
+    "early_stopping_patience": 2,
+    "early_stopping_threshold": 5,
+    "exit_if_early_stop": false,
+
+    "run_name": "ext",
+    "save_total_limit": 2,
+    "output_dir": "../outputs/train/cnn",
+    "extend_dirs_with_run_name": true
+}

@@ -1,0 +1,16 @@
+# Local files
+Playground.ipynb
+
+# Local folders
+**/demo/guided_summarization
+**/flagged
+**/env
+**/outputs
+**/__pycache__
+**/.ipynb_checkpoints
+**/.vscode
+**/old
+**/wandb
+**/data
+**/dependencies
+/summarization/metrics/external

@@ -1,0 +1,4 @@
+- Julien Heitmann <julien.heitmann@inf.ethz.ch>: Implementation
+- Philippe Schlattner <philippe.schlattner@inf.ethz.ch>: Implementation
+- Ribin Chalumattu <cribin@inf.ethz.ch>: Implementation
+- Laura Mascarell <laura.mascarellespuny@inf.ethz.ch>: Supervision and implementation

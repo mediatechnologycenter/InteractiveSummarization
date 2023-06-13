@@ -1,0 +1,38 @@
+{
+    "_SumArguments": "SumArguments",
+    "metric_loading_script": "metrics/metric_ext.py",
+    "preprocess_num_proc": 16,
+
+
+    "_SumDataArguments": "SumDataArguments",
+    "dataset_loading_script": ["ccdv/cnn_dailymail", "3.0.0"],
+
+    "src_field": "article",
+    "tgt_field": "highlights",
+
+    "max_src_sample_len": 512,
+
+    "train_size": 1,
+    "valid_size": 1,
+
+    "truncation": true,
+    "filter_truncated_train": false,
+    "filter_truncated_valid": false,
+    "filter_truncated_test": false,
+
+
+    "_ExtSumModelArguments": "ExtSumModelArguments",
+    "pretrained_model_name_or_path": "mtc/extractive-bert-base",
+
+
+    "_ExtSumTrainingArguments": "ExtSumTrainingArguments",
+    "report_to": [],
+
+    "do_train": false,
+    "do_eval": false,
+    "do_predict": true,
+
+    "run_name": "ext",
+    "output_dir": "../outputs/eval/cnn",
+    "extend_dirs_with_run_name": true
+}

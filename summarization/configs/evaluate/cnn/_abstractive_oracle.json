@@ -1,0 +1,45 @@
+{
+    "_SumArguments": "SumArguments",
+    "preprocess_num_proc": 16,
+
+
+    "_SumDataArguments": "SumDataArguments",
+    "dataset_loading_script": ["ccdv/cnn_dailymail", "3.0.0"],
+    "guidance": "sent_guided",
+    
+    "src_field": "article",
+    "tgt_field": "highlights",
+
+    "max_src_sample_len": 1024,
+    "max_tgt_sample_len": 1024,
+
+    "train_size": 1,
+    "valid_size": 1,
+
+    "truncation": true,
+    "filter_truncated_train": false,
+    "filter_truncated_valid": false,
+    "filter_truncated_test": false,
+
+
+    "_AbsSumModelArguments": "AbsSumModelArguments",
+    "pretrained_model_name_or_path": "mtc/guided-bart-large",
+
+
+    "_AbsSumTrainingArguments": "AbsSumTrainingArguments",
+    "report_to": [],
+    "predict_with_generate": true,
+    "max_length": 140,
+    "min_length": 55,
+    "length_penalty": 2,
+    "no_repeat_ngram_size": 3,
+    "evaluation_strategy": "no",
+
+    "do_train": false,
+    "do_eval": false,
+    "do_predict": true,
+
+    "run_name": "abs",
+    "output_dir": "../outputs/eval/cnn",
+    "extend_dirs_with_run_name": true
+}
